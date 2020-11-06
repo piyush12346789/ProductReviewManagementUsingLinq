@@ -7,7 +7,6 @@ namespace ProductReviewManagementUsingLinq
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to product review management.");
             List<ProductReview> productReviewList = new List<ProductReview>()
             {
                 new ProductReview(){ProducID=1,UserID=1,Rating=2,Review="Good",isLike=true},
@@ -22,11 +21,8 @@ namespace ProductReviewManagementUsingLinq
                 new ProductReview(){ProducID=10,UserID=1,Rating=8,Review="nice",isLike=true},
                 new ProductReview(){ProducID=11,UserID=1,Rating=3,Review="nice",isLike=true}
             };
-            foreach (var list in productReviewList)
-            {
-                Console.WriteLine("ProductID:- " + list.ProducID + " " + "UserID:- " + list.UserID
-                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
-            }
+            Management management = new Management();
+            management.TopRecords(productReviewList);
         }
     }
 }
